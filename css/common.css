@@ -1,0 +1,272 @@
+/* Header elements used for all pages */
+body {
+    display: grid;
+    color: black;
+    font-size: 14pt;
+    font-family: Vardana, serif;
+}
+h1 {
+    color: rgb(246, 138, 192); 
+    text-align: center;
+}
+
+h2,h5 {
+    color: hotpink;
+    text-align: left;
+}
+
+header {
+    display: block;
+}
+
+/* Navigation elements */
+nav {
+    background-color: #b59eca; 
+    height: 46px;
+    box-shadow: 0px 3px 8px #d3d3d3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+  }
+  .navmenu {
+    display: inline;
+    font-size: 1.1em;
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    padding: 10px 20px;
+    margin: 0 20px;
+  }
+  
+  .navmenu:hover, .navmenu:focus{
+    color: #FFFFFF;
+  }
+  .active {      
+      color: black;
+      font-weight: bold;
+  }
+
+ul.a{
+    list-style-type:square;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* background-color: #f6f2f6;     */
+}
+
+li {
+    
+    padding: 5px 5px;
+    color: black;
+    font-size: 14pt;
+    font-family: Georgia, serif;
+    text-align: left;
+    list-style-type:square;
+    margin-left: 2em;
+    
+}
+
+/* social media icons in the footer */
+#bottom1,#bottom2,#bottom3 { 
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+    list-style: none;
+    font-size: 12pt;
+    transition: .5s;
+    margin: 1px 1px;
+    padding:2px 2px;
+    color: white;
+} 
+.social-media{
+ position:fixed;
+ /* top: 90%; */
+ left: 50%;
+ bottom: 0;
+ height: 5em;
+ transform: translate(-53%,50%); 
+ text-align: center;
+}
+
+/* article header */
+h5{
+    margin-top: 0%;
+    margin-bottom: 1em;
+}
+
+li a:hover{
+    /* .active */
+    background-color:rgb(228, 222, 222);
+    color: black;
+}
+
+/* images in Education page */
+
+.img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 1px;
+    height: 1px;    
+}
+img:hover {
+    box-shadow: 0 0 3px 2px rgba(241, 111, 231, 0.5);
+}
+
+/* Initials Image in header */
+.init{
+    margin-left:48%;
+    padding: 5px;
+    margin-bottom: 1em;   
+}
+.init:hover {
+    box-shadow: 0 0 3px 2px rgba(241, 111, 231, 0.5);
+}
+
+/* class used for my biography page */
+article {
+    float: left;
+    width: 800px;
+    margin-left: 4em;
+}
+
+article.about {
+    width: 800px;
+    margin-top: 1em;
+    margin-left: 7em;
+    margin-right: auto;
+    padding: 1em;
+    border: 3px solid rgba(241, 111, 231, 0.5);
+    border-radius: 15px;
+    font-size: 20pt;
+   
+}
+
+/* this section modifies the aside elements */
+aside {
+    float: left;
+    width: 300px;
+    height: 850px;
+    border-right: 1px solid #e0dee0;
+    background-color: #f6f2f6;
+}
+
+aside img {
+    display: block;
+    margin-top: 4em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid rgba(243, 81, 229, 0.5);
+    border-radius: 12px;
+    width: 250px;
+    height: 271px;
+}
+
+.negative {
+    transition: all 2s ease-in-out .5s;
+    -webkit-transition: all 2s ease-in-out .5s;
+}
+
+/* Experience page
+  Style the buttons that are used to open and close the accordion panel */
+
+.accordion {
+    background-color:#f6f2f6;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: 18px;
+}
+
+.accordion:hover {
+    /* .active, */
+    background-color:rgb(228, 222, 222);
+}
+
+.x1, .x2, .main {
+    padding: 0 18px;
+    background-color: white;
+    overflow:hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+
+}
+/* section element used in experience/education pages */
+section {
+    float: left;
+    width: 800px;
+    margin-left: 5em;
+}
+
+/* formatting of experience table */
+.exp-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.exp-table thead tr {
+    background-color: rgb(250, 244, 244);
+    color: black;
+}
+
+.exp-table th, .exp-table td {
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.exp-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+.exp-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.exp-table tbody tr:last-of-type {
+    border-bottom: 1px solid #555;
+}
+
+#cap1 {
+    color: hotpink;
+    text-align: center;
+    font-weight: bold;
+}
+/* Education page grid alignment */
+.burec {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    color: black;
+    margin: 5px;
+    padding: 10px;
+}
+
+.e1 {
+    grid-column: 1 / 2;
+}
+
+.e2 {
+    grid-column: 2 / 5;
+}
+
+.e3 {
+    grid-column: 1 / 2;
+}
+
+.e4 {
+    grid-column: 2 / 5;
+}
