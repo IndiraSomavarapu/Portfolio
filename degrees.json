@@ -1,19 +1,20 @@
 {
-	"my_college_degrees": [{
-			"Degree": {
-				"School": "Nagarjuna University",
-				"Program/Major": "Bachelors of Commerce",
-				"Type": "B.Comm",
-				"Year conferred": "1995"
-			}
-		},
-		{
-			"Degree": {
-				"School": "Boston University",
-				"Program/Major": "Master of Science in Software Development",
-				"Type": "MS",
-				"Year conferred": "2021"
-			}
-		}
-	]
+  "my_college_degrees": [
+    {
+      "Degree": {
+        "School": "Nagarjuna University",
+        "Program/Major": "Bachelors of Commerce",
+        "Type": "B.Comm",
+        "Year conferred": "1995"
+      }
+    },
+    {
+      "Degree": {
+        "School": "Boston University",
+        "Program/Major": "MS in Software Development",
+        "Type": "MS",
+        "Year conferred": "2021"
+      }
+    }
+  ]
 }
