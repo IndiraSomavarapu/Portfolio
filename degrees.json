@@ -2,13 +2,13 @@
   "my_college_degrees": [
     {
       "School": "Nagarjuna University",
-      "Program": "Bachelors of Commerce",
-      "Type": "B.Comm",
+      "Program/Major": "Bachelors of Commerce",
+      "Type": "B Comm",
       "Year": "1995"
     },
     {
       "School": "Boston University",
-      "Program": "MS in Software Development",
+      "Program/Major": "Master of Science in Software Development",
       "Type": "MS",
       "Year": "2021"
     }
