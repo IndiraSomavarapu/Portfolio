@@ -1,16 +1,18 @@
 /* Header elements used for all pages */
+
 body {
     display: grid;
     color: black;
     font-size: 14pt;
     font-family: Vardana, serif;
 }
+
 h1 {
-    color: rgb(246, 138, 192); 
+    color: rgb(246, 138, 192);
     text-align: center;
 }
 
-h2,h5 {
+h2, h5 {
     color: hotpink;
     text-align: left;
 }
@@ -20,8 +22,9 @@ header {
 }
 
 /* Navigation elements */
+
 nav {
-    background-color: #b59eca; 
+    background-color: #b59eca;
     height: 46px;
     box-shadow: 0px 3px 8px #d3d3d3;
     display: flex;
@@ -30,8 +33,8 @@ nav {
     margin: 0;
     padding: 0;
     font-family: Georgia, serif;
-  }
-  .navmenu {
+}
+.navmenu,.navMenu,.activeTab  {
     display: inline;
     font-size: 1.1em;
     display: inline-block;
@@ -39,18 +42,19 @@ nav {
     color: #000000;
     padding: 10px 20px;
     margin: 0 20px;
-  }
-  
-  .navmenu:hover, .navmenu:focus{
-    color: #FFFFFF;
-  }
-  .active {      
-      color: black;
-      font-weight: bold;
-  }
+}
 
-ul.a{
-    list-style-type:square;
+.navmenu:hover, .navmenu:focus {
+    color: #FFFFFF;
+}
+
+.active {
+    color: black;
+    font-weight: bold;
+}
+
+ul.a {
+    list-style-type: square;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -58,48 +62,58 @@ ul.a{
 }
 
 li {
-    
     padding: 5px 5px;
     color: black;
     font-size: 14pt;
     font-family: Georgia, serif;
     text-align: left;
-    list-style-type:square;
+    list-style-type: square;
     margin-left: 2em;
-    
 }
 
 /* social media icons in the footer */
-#bottom1,#bottom2,#bottom3 { 
-	margin: 0;
-	padding: 0;
-	display: inline-block;
+
+#bottom1, #bottom2, #bottom3 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
     list-style: none;
-    font-size: 12pt;
+    font-size: 10pt;
     transition: .5s;
     margin: 1px 1px;
-    padding:2px 2px;
+    padding: 2px 2px;
     color: white;
-} 
-.social-media{
+}
+
+/* .social-media{
  position:fixed;
- /* top: 90%; */
+ 
  left: 50%;
  bottom: 0;
  height: 5em;
  transform: translate(-53%,50%); 
  text-align: center;
+}  */
+
+footer {
+    text-align: center;
+    padding: 2px 0;
+    background-color: #cdcad1;
+    color: #ffffffec;
+    margin-top: 1px;
+    line-height: 1em;
 }
 
 /* article header */
-h5{
+
+h5 {
     margin-top: 0%;
     margin-bottom: 1em;
 }
 
-li a:hover{
+li a:hover {
     /* .active */
-    background-color:rgb(228, 222, 222);
+    background-color: rgb(228, 222, 222);
     color: black;
 }
 
@@ -110,23 +124,27 @@ li a:hover{
     border-radius: 4px;
     padding: 5px;
     width: 1px;
-    height: 1px;    
+    height: 1px;
 }
+
 img:hover {
     box-shadow: 0 0 3px 2px rgba(241, 111, 231, 0.5);
 }
 
 /* Initials Image in header */
-.init{
-    margin-left:48%;
+
+.init {
+    margin-left: 48%;
     padding: 5px;
-    margin-bottom: 1em;   
+    margin-bottom: 1em;
 }
+
 .init:hover {
     box-shadow: 0 0 3px 2px rgba(241, 111, 231, 0.5);
 }
 
 /* class used for my biography page */
+
 article {
     float: left;
     width: 800px;
@@ -142,10 +160,20 @@ article.about {
     border: 3px solid rgba(241, 111, 231, 0.5);
     border-radius: 15px;
     font-size: 20pt;
-   
+}
+
+.bluebold {
+    color: blue;
+    font-weight: bold;
+}
+
+.bold {
+    
+    font-weight: bold;
 }
 
 /* this section modifies the aside elements */
+
 aside {
     float: left;
     width: 300px;
@@ -174,7 +202,7 @@ aside img {
   Style the buttons that are used to open and close the accordion panel */
 
 .accordion {
-    background-color:#f6f2f6;
+    background-color: #f6f2f6;
     color: black;
     cursor: pointer;
     padding: 18px;
@@ -185,28 +213,52 @@ aside img {
     transition: 0.4s;
     font-size: 18px;
 }
-
+/* Add a background color to the button if it is clicked on 
+(add the .active class with JS), 
+and when you move the mouse over it (hover) */
 .accordion:hover {
     /* .active, */
-    background-color:rgb(228, 222, 222);
+    background-color: rgb(228, 222, 222);
 }
 
-.x1, .x2, .main {
+/* Style the accordion panel. Note: hidden by default */
+/* .showJson */
+.x1, .x2, .main,.showJson {
     padding: 0 18px;
     background-color: white;
-    overflow:hidden;
+    /* hide the content */
+    overflow: hidden;
     max-height: 0;
     transition: max-height 0.2s ease-out;
-
+    /* resizing the window adjusts the content height dynamically */
+    /* display:none;
+    overflow: auto; */
 }
+
+.accordion::after{
+    content: '\25be';
+    float: right;
+    transform: scale(1.5);
+}
+.accordion.active{
+    background: light gray;
+}
+.accordion.active::after { 
+    content: '\25b4';
+}
+/* .accordion.active + .accordion{
+     display: block;}  */
+
 /* section element used in experience/education pages */
+
 section {
     float: left;
     width: 800px;
-    margin-left: 5em;
+    margin-left: 6em;
 }
 
 /* formatting of experience table */
+
 .exp-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -244,7 +296,9 @@ section {
     text-align: center;
     font-weight: bold;
 }
+
 /* Education page grid alignment */
+
 .burec {
     display: grid;
     grid-gap: 2em;
@@ -269,4 +323,161 @@ section {
 
 .e4 {
     grid-column: 2 / 5;
+}
+
+/*-----------------Contact.html-----------------*/
+
+form {
+    display: grid;
+    /* grid-template-columns: 430px 430px; */
+    grid-template-columns: 300px 360px;
+    grid-gap: 15px 0px;
+    justify-items: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    width: 660px;
+    /* border: 2px solid #f1edf0; */
+    /* background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 #d3d3d3; */
+    padding: 1px 0;
+}
+
+.textbox, #textarea {
+    /* padding: 1px; */
+    margin: 15px 0;
+    border: 1px solid #f0eff1;
+    border-radius: 5px;
+    display: block;
+}
+
+.textbox {
+    width: 270px;
+    margin-left: auto;
+}
+
+#textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1px;
+    height: 50px;
+    width: 600px;
+}
+
+#textarea_label {
+    grid-column: 1 / 3;
+}
+
+#submit_button {
+    margin: 20px;
+    width: 100px;
+    border-radius: 20px;
+    margin-left: 1px;
+    margin-right: auto;
+    padding: 5px;
+    background-color: #f6f2f6;
+    color: #000000;
+    font-size: 1.1em;
+    border: 1px solid #000000;
+    outline: none;
+    transition: 0.3s;
+}
+
+#reset_button {
+    margin: 20px;
+    width: 100px;
+    border-radius: 20px;
+    margin-left: 1px;
+    margin-right: auto;
+    padding: 5px;
+    background-color: #f6f2f6;
+    color: #000000;
+    font-size: 1.1em;
+    border: 1px solid #000000;
+    outline: none;
+    transition: 0.3s;
+}
+
+#submit_button:hover, #reset_button:hover {
+    background-color: rgb(228, 222, 222);
+    color: black;
+}
+
+#success_mesaage {
+    color: green;
+    font-weight: bold;
+}
+
+/* form validation */
+
+.textbox:focus, #textarea:focus {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    outline: none;
+    /*Gets rid of automatic outline around focused element */
+    box-shadow: 0 0 7px #adadad;
+    /* adds shadow around text field when focused */
+}
+
+#error_message {
+    display: none;
+    background-color: #f5caca;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 #d3d3d3;
+    width: 700px;
+    margin-left: 9em;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+#error_list {
+    text-align: center;
+}
+
+#error_list li {
+    text-align: left;
+    padding: 5px 0;
+}
+
+#success_message p {
+    font-size: 1.5em;
+    color: #008807;
+    text-align: center;
+}
+
+/* for json table */
+
+.edTable  {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.edTable th {
+    background-color: rgb(250, 244, 244);
+    color: black;
+    padding: 10px 12px;
+}
+
+.edTable td {
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.edTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+.edTable tbody tr:nth-of-type(odd) {
+    background-color: #f3f3f3;
+}
+
+.edTable tbody tr:last-of-type {
+    border-bottom: 1px solid #555;
 }

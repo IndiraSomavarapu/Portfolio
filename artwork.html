@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="stylesheet" href="css/artwork.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Sofia&family=Domine&display=swap" rel="stylesheet">
+    <!--Include Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script> 
+    <script src="js/art.js" defer></script>
+    <!-- <script src="js/script.js" defer></script> -->
+    <title>ArtWork</title>
+</head>
+<body>
+  <header>
+    <h1>Somavarapu's Portfolio </h1>
+    <img src="media/initials.JPG" alt="Indira" class="init" />
+    <nav>
+      <a href="index.html" class="navmenu">About</a>
+      <a href="experience.html" class="navmenu">Experience</a>
+      <!-- <a href="education.html" class="navmenu">Education</a> -->
+      <a href="contact.html" class="navmenu">Contact Form</a>
+      <a href="artwork.html" class="navmenu active">ArtWork</a>  
+    </nav>
+  </header>
+  <main>
+    <aside>
+      <img src="media/Indira.jpeg" alt="Welcome" class="negative">
+    </aside>
+    <h4>A collection of acrylic, pastel, water color and char coal paintings</h4>
+    <section id="carousel">    
+      <section class='carouselView'>
+        <transition-group class='carousel' tag="section">
+          <section v-for="slide in slides" class='slide' :key="slide.id">
+            <img :src="slide.imgSrc" :alt="slide.altText">
+            <p class="bold">{{slide.caption}}</p>
+          </section>
+        </transition-group>
+        <section class='carouselControls'>
+          <button class='carouselButton' @click="previous">&#8592;</button>
+          <button class='carouselButton' @click="next"> &#8594;</button>
+        </section>
+      </section>
+    </section> 
+  </main>
+  <footer class="social-media">
+    <ul id="bot">
+      <li id="bottom1"><a href="https://github.com/IndiraSomavarapu" target="_blank">
+          <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li id="bottom2">
+        <a href="https://www.facebook.com/indira.somavarapu" target="_blank">
+          <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li id="bottom3">
+        <a href="https://www.linkedin.com/in/indirasomavarapu/" target="_blank">
+          <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+
+  </footer>
+</body>
+</html>

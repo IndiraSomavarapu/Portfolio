@@ -1,0 +1,61 @@
+/* CSS for artwork.html*/
+
+h4{ 
+  margin-left: 35%;
+}
+
+.carouselView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 850px;
+    height: 560px;
+  }
+  
+  .slide {
+    flex: 0 0 800px; /* sets flex-grow, flex-shrink, flex-basis */
+    height: 550px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .slide img {
+    height: 530px;
+    width: 800px;
+    object-fit: contain;
+  }
+  
+  .slide:first-of-type {
+    opacity: 0;
+  }
+  
+  .slide:last-of-type {
+    opacity: 0;
+  }
+  
+  .carouselButton {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 1em;
+    padding: 2px 10px;
+    margin: 10px 140px 0 180px;
+    background-color: #b59eca;
+    color: #ffffff;
+    border-radius: 30px;
+    outline: none;
+  }
+  
+  .carouselButton:hover {
+    background-color: #000000;
+  }

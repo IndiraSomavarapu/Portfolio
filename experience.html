@@ -4,13 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience</title>
   <link rel="stylesheet" href="css/common.css" type="text/css">
-  <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+  <!-- <link rel="stylesheet" href="css/print.css" type="text/css" media="print"> -->
   <!-- social media logos are used from below library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/resume.js" defer></script>
+  <!-- needed for ajax -->
+  <!-- <link rel="stylesheet" href="css/style.css" type="text/css"> -->
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -18,28 +21,23 @@
     <h1>Somavarapu's Portfolio </h1>
     <img src="media/initials.JPG" alt="Indira" class="init" />
     <nav>
-      <!-- <ul>
-        <li> <a href="index.html">About</a> </li>
-        <li> <a class="active" href="experience.html">Experience</a> </li>
-        <li> <a href="education.html">Education</a> </li>
-        <li> <a href="contact.html">Contact Form</a></li>
-      </ul> -->
-      <a href="index.html" class="navmenu" >About</a>
+      <a href="index.html" class="navmenu">About</a>
       <a href="experience.html" class="navmenu active">Experience</a>
-      <a href="education.html" class="navmenu">Education</a>
+      <!-- <a href="education.html" class="navmenu">Education</a> -->
       <a href="contact.html" class="navmenu">Contact Form</a>
+      <a href="artwork.html" class="navmenu">ArtWork</a>  
     </nav>
   </header>
 
   <main>
-  
+    
     <aside>
       <img src="media/Indira.jpeg" alt="Welcome" class="negative">
     </aside>
     <section>
-    
       <h2>Resume</h2>
-      <button id="expandContent" class="accordion">Professional Summary</button>
+      <!-- https://www.w3schools.com/howto/howto_js_accordion.asp -->
+      <button id="expandContent1" class="accordion">Professional Summary</button>
       <div class="x1">
         <ul class="a">
           <li>Provide technical solutions</li>
@@ -49,10 +47,9 @@
           <li>Follow Agile-methodology in SDLC</li>
         </ul>
       </div>
-      <button id="expandContent" class="accordion">Skill Set</button>
-      
+
+      <button id="expandContent2" class="accordion">Skill Set</button>
       <div class="x2">
-       
         <ul class="a">
           <li>ERP Applications: <b>SAP</b></li>
           <li>Operating Systems: <b>Windows</b></li>
@@ -61,10 +58,8 @@
           <li>Technologies: <b>XI,Workflow</b></li>
         </ul>
       </div>
-      <button id="expandContent" class="accordion">Employment</button>
- 
+      <button id="expandContent3" class="accordion">Employment</button>
       <div class="main">
-  
         <table class="exp-table">
           <caption id="cap1">Employment History in USA</caption>
           <thead>
@@ -98,29 +93,30 @@
           </tbody>
         </table>
       </div>
-
-    </section>    
+      <button id="expandContent4" class="accordion">Education </button>      
+    <div class="showJson"> <p id="showJson" > </p></div>
+    </section>
+    
   </main>
-  <footer class="social-media">        
+  <footer class="social-media">
     <ul id="bot">
-       <li id="bottom1"><a href="https://github.com/IndiraSomavarapu"
-               target="_blank">
-               <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-           </a>
-       </li>
+      <li id="bottom1"><a href="https://github.com/IndiraSomavarapu" target="_blank">
+          <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
       <li id="bottom2">
-           <a href="https://www.facebook.com/indira.somavarapu" target="_blank">
-               <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
-           </a>
-       </li>  
-       <li id="bottom3">
-           <a href="https://www.linkedin.com/in/indirasomavarapu/" target="_blank">
-               <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-           </a>
-       </li>
-   </ul> 
+        <a href="https://www.facebook.com/indira.somavarapu" target="_blank">
+          <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li id="bottom3">
+        <a href="https://www.linkedin.com/in/indirasomavarapu/" target="_blank">
+          <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
 
-</footer>
+  </footer>
 
 </body>
 

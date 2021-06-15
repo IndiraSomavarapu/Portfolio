@@ -1,0 +1,18 @@
+{
+  "my_college_degrees": [
+    {
+      "School": "Nagarjuna University",
+      "Program": "B.Comm",
+      "Year": "1995",
+      "Country": "India",
+      "Duration": "3 years"
+    },
+    {
+      "School": "Boston University",
+      "Program": "MSSD",
+      "Year": "2021",
+      "Country": "USA",
+      "Duration": "2 years"
+    }
+  ]
+}
