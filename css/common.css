@@ -1,10 +1,18 @@
 /* Header elements used for all pages */
 
 body {
-    display: grid;
+    /* display: grid; */
     color: black;
     font-size: 14pt;
     font-family: Vardana, serif;
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -14,7 +22,7 @@ h1 {
 
 h2, h5 {
     color: hotpink;
-    text-align: left;
+    text-align: center;
 }
 
 header {
@@ -25,7 +33,7 @@ header {
 
 nav {
     background-color: #b59eca;
-    height: 46px;
+    height: 60px;
     box-shadow: 0px 3px 8px #d3d3d3;
     display: flex;
     flex-direction: row;
@@ -35,16 +43,17 @@ nav {
     font-family: Georgia, serif;
 }
 .navmenu,.navMenu,.activeTab  {
-    display: inline;
+    /* display: inline; */
     font-size: 1.1em;
-    display: inline-block;
+    /* display: inline-block; */
     text-decoration: none;
     color: #000000;
-    padding: 10px 20px;
+    padding: 15px 20px;
     margin: 0 20px;
+    display: flex;
 }
 
-.navmenu:hover, .navmenu:focus {
+.navmenu:hover,.navmenu:focus {
     color: #FFFFFF;
 }
 
@@ -65,7 +74,7 @@ li {
     padding: 5px 5px;
     color: black;
     font-size: 14pt;
-    font-family: Georgia, serif;
+    font-family: sans-serif;
     text-align: left;
     list-style-type: square;
     margin-left: 2em;
@@ -125,11 +134,12 @@ li a:hover {
     padding: 5px;
     width: 1px;
     height: 1px;
+    /* display: flex; */
 }
 
-img:hover {
-    box-shadow: 0 0 3px 2px rgba(241, 111, 231, 0.5);
-}
+/* img:hover {
+    box-shadow: 0 0 2px 2px rgba(241, 111, 231, 0.5);
+} */
 
 /* Initials Image in header */
 
@@ -137,29 +147,35 @@ img:hover {
     margin-left: 48%;
     padding: 5px;
     margin-bottom: 1em;
+    width:fit-content;
+    /* display: flex; */
 }
 
 .init:hover {
-    box-shadow: 0 0 3px 2px rgba(241, 111, 231, 0.5);
+    box-shadow: 0 0 2px 2px rgba(241, 111, 231, 0.5);
 }
 
 /* class used for my biography page */
-
-article {
-    float: left;
-    width: 800px;
-    margin-left: 4em;
+#flex{
+    display: flex;
 }
 
-article.about {
+/* article {
+    float: center;
     width: 800px;
-    margin-top: 1em;
+    margin-left: 4em;
+}  */
+
+article.about {
+    max-width: 800px; 
+    margin-top: 2em;
     margin-left: 7em;
-    margin-right: auto;
-    padding: 1em;
-    border: 3px solid rgba(241, 111, 231, 0.5);
+    padding: 1em;    
     border-radius: 15px;
-    font-size: 20pt;
+    font-size: 20pt;      
+    border:3px solid rgba(241, 111, 231, 0.5);    
+    height: fit-content;
+    float: left ;
 }
 
 .bluebold {
@@ -167,8 +183,7 @@ article.about {
     font-weight: bold;
 }
 
-.bold {
-    
+.bold {    
     font-weight: bold;
 }
 
@@ -176,26 +191,31 @@ article.about {
 
 aside {
     float: left;
-    width: 300px;
-    height: 850px;
+    /* width: 300px; */
+    width: 350px;
+    height: 1210px;
     border-right: 1px solid #e0dee0;
     background-color: #f6f2f6;
+    display: flex;
 }
 
 aside img {
-    display: block;
+    /* display: block; */
     margin-top: 4em;
     margin-left: auto;
     margin-right: auto;
     border: 3px solid rgba(243, 81, 229, 0.5);
     border-radius: 12px;
     width: 250px;
-    height: 271px;
+    height: 271px;    
+    display: flex;
 }
 
 .negative {
+    
     transition: all 2s ease-in-out .5s;
-    -webkit-transition: all 2s ease-in-out .5s;
+    /* -webkit-transition: all 2s ease-in-out .5s; */
+    opacity: 1;
 }
 
 /* Experience page
@@ -212,6 +232,8 @@ aside img {
     outline: none;
     transition: 0.4s;
     font-size: 18px;
+    /* min-height: fit-content; */
+    
 }
 /* Add a background color to the button if it is clicked on 
 (add the .active class with JS), 
@@ -222,18 +244,20 @@ and when you move the mouse over it (hover) */
 }
 
 /* Style the accordion panel. Note: hidden by default */
-/* .showJson */
-.x1, .x2, .main,.showJson {
+/* .x1, .x2, .x3,.showJson { */
+.accordianContent {  
     padding: 0 18px;
     background-color: white;
     /* hide the content */
-    overflow: hidden;
+    /* overflow: hidden;
     max-height: 0;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.2s ease-out; */
     /* resizing the window adjusts the content height dynamically */
-    /* display:none;
-    overflow: auto; */
+    display:none;
+    overflow: auto;
 }
+
+.accordion.active + .accordianContent { display:block}
 
 .accordion::after{
     content: '\25be';
@@ -241,24 +265,23 @@ and when you move the mouse over it (hover) */
     transform: scale(1.5);
 }
 .accordion.active{
-    background: light gray;
+    background: rgb(228, 226, 226);
 }
 .accordion.active::after { 
     content: '\25b4';
 }
-/* .accordion.active + .accordion{
-     display: block;}  */
 
 /* section element used in experience/education pages */
 
-section {
-    float: left;
+.align{
+    /* float: left; */
     width: 800px;
-    margin-left: 6em;
+    margin-left: 12em;    
+    margin-top:2em;
+   
 }
 
 /* formatting of experience table */
-
 .exp-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -298,15 +321,36 @@ section {
 }
 
 /* Education page grid alignment */
-
-.burec {
+.initEd {    
+    padding: 5px;
+    margin-bottom: 1em;
+    margin-left: 3em;   
+}
+.initEd1 {    
+    padding: 5px;
+    margin-bottom: 1em;
+    margin-left: 3.5em;   
+}
+.initEd:hover,.initEd1:hover {
+    box-shadow: 0 0 2px 2px rgba(241, 111, 231, 0.5);
+}
+.alignEdu{
+    width: 800px;    
+    margin-left: 10em;    
+    margin-top:3em;  
+    float: left;      
+    border: 2px solid #f1edf0;  
+}
+ .burec {
     display: grid;
     grid-gap: 2em;
+    font-family: sans-serif;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(50px, auto);
     color: black;
     margin: 5px;
     padding: 10px;
+    float:left;
 }
 
 .e1 {
@@ -323,33 +367,41 @@ section {
 
 .e4 {
     grid-column: 2 / 5;
-}
+} 
 
 /*-----------------Contact.html-----------------*/
-
-form {
-    display: grid;
-    /* grid-template-columns: 430px 430px; */
-    grid-template-columns: 300px 360px;
-    grid-gap: 15px 0px;
+/* form */
+#myForm {
+    display: grid;    
+    grid-template-columns: 350px 350px;
+    grid-gap: 20px 0px;
     justify-items: left;
-    margin-left: auto;
+    margin-left: 4.5em;
     margin-right: auto;
-    margin-top: 1em;
-    width: 660px;
-    /* border: 2px solid #f1edf0; */
+    margin-top:1em;
+    width: 800px;  
+    padding: 1px 0;
+}
+.contactForm {
+    width: 800px;    
+    margin-left: 10em;    
+    margin-top:3em;  
+    float: left;  
+    
+    border: 2px solid #f1edf0;    
     /* background-color: #f7f7f7;
     border-radius: 10px;
-    box-shadow: 0 0 20px 0 #d3d3d3; */
-    padding: 1px 0;
+    box-shadow: 0 0 20px 0 #d3d3d3;  */
+   
+    
 }
 
 .textbox, #textarea {
     /* padding: 1px; */
-    margin: 15px 0;
-    border: 1px solid #f0eff1;
-    border-radius: 5px;
-    display: block;
+   margin: 25px 0;
+   border: 1px solid #f0eff1;
+   border-radius: 5px;
+   display: block; 
 }
 
 .textbox {
@@ -358,10 +410,10 @@ form {
 }
 
 #textarea {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family:  Georgia, serif; */
     margin-bottom: 1px;
     height: 50px;
-    width: 600px;
+    width: 630px;
 }
 
 #textarea_label {
@@ -372,7 +424,7 @@ form {
     margin: 20px;
     width: 100px;
     border-radius: 20px;
-    margin-left: 1px;
+    margin-left: 2em;
     margin-right: auto;
     padding: 5px;
     background-color: #f6f2f6;
@@ -403,9 +455,12 @@ form {
     color: black;
 }
 
-#success_mesaage {
+#success_message{
     color: green;
     font-weight: bold;
+    float: left;
+    width: 800px;
+    margin-left: 10em;
 }
 
 /* form validation */
@@ -421,15 +476,16 @@ form {
 
 #error_message {
     display: none;
-    background-color: #f5caca;
+    background-color: #f6f1f1;
     border-radius: 10px;
     box-shadow: 0 0 20px 0 #d3d3d3;
     width: 700px;
-    margin-left: 9em;
+    margin-left: 12em;
     margin-right: auto;
     text-align: center;
-    padding: 10px;
-    margin-top: 30px;
+    padding: 5px;
+    margin-top: 60px;
+    float: left;
 }
 
 #error_list {
@@ -447,7 +503,7 @@ form {
     text-align: center;
 }
 
-/* for json table */
+/* Experience - for json table */
 
 .edTable  {
     border-collapse: collapse;

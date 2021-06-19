@@ -1,9 +1,23 @@
+const nameRegex = /^[a-zA-Z]+$/; /* alpha characters only */
+
+/* Phone regex adapted from https://stackoverflow.com/questions/4338267/validate-phone-number-with-javascript */
+/* vaild formats: (123) 456-7890, (123)456-7890, (123)-456-7890, 123-456-7890, 123.456.7890, 1234567890, +31636363634, 075-63546725 */
+const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+/* name@domain.com or my.name123@domain.edu */
+const emailRegex = /[\w.-]+@\w+\.[\w.]{2,}/i;
+
+const minimum_comment_length = 10;
+const minimum_name_length = 2;
+const minimum_value_length = 0;
+
 // validate first/Last name - alpha characters allowed
 function nameValidate(name) {
 
   var field = document.getElementById(name.id);
-
-  if (/^[A-Za-z]+$/.test(field.value)) {
+  /* alpha characters only */
+  if (nameRegex.test(field.value)) {
+    // if (/^[A-Za-z]+$/.test(field.value)) {
     // clear border and backgroundcolor      
     field.style.bordercolor = "";
     field.style.border = "";
@@ -17,10 +31,10 @@ function nameValidate(name) {
 // validate phone Number if entered
 function phoneValidate() {
 
-  let phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+  // let phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
   var field = document.getElementById("phone");
-  if (field.value.length > 0) {
+  if (field.value.length > minimum_value_length) {
     if (!phone.value.match(phoneRegex)) {
       field.style.bordercolor = "#ba0000";
       field.style.backgroundColor = "#f5caca";
@@ -39,9 +53,11 @@ function phoneValidate() {
 
 // validate email address input value
 function emailValidate() {
+
   var field = document.getElementById("email");
-  // var emailRegex = /[\w.-]+@\w+\.[\w.]{2,}/i;
-  if (!/[\w.-]+@\w+\.[\w.]{2,}/i.test(field.value)) {
+  /* name@domain.com or my.name123@domain.edu */
+  // if (!/[\w.-]+@\w+\.[\w.]{2,}/i.test(field.value)) {
+  if (!emailRegex.test(field.value)) {
     field.style.bordercolor = "#ba0000";
     field.style.backgroundColor = "#f5caca";
   } else {
@@ -55,7 +71,7 @@ function emailValidate() {
 function commentlengthvalidate() {
 
   var field = document.getElementById("textarea");
-  if (field.value.length < 10) {
+  if (field.value.length < minimum_comment_length) {
     field.style.backgroundColor = "#f5caca";
     field.style.borderColor = "#ba0000";
   } else {
@@ -79,11 +95,14 @@ function validateForm() {
   let errors = document.getElementById("error_list");
   let success = document.getElementById("success_message");
 
-  let nameRegex = /^[a-zA-Z]+$/; /* alpha characters only */
-  let phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+  // let nameRegex = /^[a-zA-Z]+$/; /* alpha characters only */
 
-  // let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  let emailRegex = /[\w.-]+@\w+\.[\w.]{2,}/i;
+  // /* Phone regex adapted from https://stackoverflow.com/questions/4338267/validate-phone-number-with-javascript */
+  // /* vaild formats: (123) 456-7890, (123)456-7890, (123)-456-7890, 123-456-7890, 123.456.7890, 1234567890, +31636363634, 075-63546725 */
+  // let phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+  // /* name@domain.com or my.name123@domain.edu */
+  // let emailRegex = /[\w.-]+@\w+\.[\w.]{2,}/i;
 
   /* resets form styles and empties error message if resubmitted */
   errorContainer.style.display = "none";
@@ -99,10 +118,11 @@ function validateForm() {
   textarea.style.backgroundColor = "#ffffff";
   textarea.style.borderColor = "#257cd1";
 
-  /* form returns false if first name length is less than 2, prints styled error message to DOM  */
-  if (fname.value.length < 2 || !fname.value.match(nameRegex)) {
+  /* form returns false if first name length is less than 2, 
+  prints styled error message to DOM  */
+  if (fname.value.length < minimum_name_length || !fname.value.match(nameRegex)) {
     errorContainer.style.display = "block";
-    if (fname.value.length < 2) {
+    if (fname.value.length < minimum_name_length) {
       errors.innerHTML += `<li>First name must have at least 2 characters.</li>`;
     } if (!fname.value.match(nameRegex)) {
       errors.innerHTML += `<li>First name must contain alphabetical characters only.</li>`;
@@ -111,10 +131,11 @@ function validateForm() {
     fname.style.borderColor = "#ba0000";
     returnValue = false;
   }
-  /* form returns false if last name length is less than 2 or non-alphabetical characters are used, prints styled error message to DOM  */
-  if (lname.value.length < 2 || !lname.value.match(nameRegex)) {
+  /* form returns false if last name length is less than 2
+   or non-alphabetical characters are used, prints styled error message to DOM  */
+  if (lname.value.length < minimum_name_length || !lname.value.match(nameRegex)) {
     errorContainer.style.display = "block";
-    if (lname.value.length < 2) {
+    if (lname.value.length < minimum_name_length) {
       errors.innerHTML += `<li>Last name must have at least 2 characters.</li>`;
     } if (!lname.value.match(nameRegex)) {
       errors.innerHTML += `<li>Last name must contain alphabetical characters only.</li>`;
@@ -127,7 +148,7 @@ function validateForm() {
   /* form returns false if email address is not valid */
   if (!emailRegex.test(email.value)) {
     errorContainer.style.display = "block";
-    if (lname.value.length > 0) {
+    if (lname.value.length > minimum_value_length) {
       errors.innerHTML += `
         <li>Email address entered is not valid.</li>
         <ul><li>Enter a valid email such as name@domain.com or my.name123@domain.edu</li></ul>
@@ -143,7 +164,7 @@ function validateForm() {
   }
 
   /* if the user typed in something for phone number, validate it */
-  if (phone.value.length > 0) {
+  if (phone.value.length > minimum_value_length) {
     /* form returns false if phone number entered does not match regex */
     if (!phone.value.match(phoneRegex)) {
       errorContainer.style.display = "block";
@@ -159,7 +180,7 @@ function validateForm() {
 
   /* form returns false if message length is less than 10 characters,
    prints styled error message to DOM  */
-  if (textarea.value.length < 10) {
+  if (textarea.value.length < minimum_comment_length) {
     errorContainer.style.display = "block";
     errors.innerHTML += `<li>Message must contain at least 10 characters.</li>`;
     textarea.style.backgroundColor = "#f5caca";
@@ -173,7 +194,7 @@ function validateForm() {
 }
 function resetForm() {
   document.getElementById("myForm").reset();
-  let smsg = document.getElementById("success_message");  
+  let smsg = document.getElementById("success_message");
   smsg.innerText = '';
-  smsg.innerHTML = '';  
+  smsg.innerHTML = '';
 }

@@ -2,16 +2,14 @@
   "my_college_degrees": [
     {
       "School": "Nagarjuna University",
-      "Major": "Bachelors of Commerce",
-      "Type": "BS",
+      "Program": "B.Comm",
       "Year": "1995",
       "Country": "India",
       "Duration": "3 years"
     },
     {
       "School": "Boston University",
-      "Major": "Master of Science in Software Development",
-      "Type": "MS",
+      "Program": "MSSD",
       "Year": "2021",
       "Country": "USA",
       "Duration": "2 years"

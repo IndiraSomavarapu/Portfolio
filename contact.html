@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <!-- <link rel="stylesheet" href="css/contact.css" type="text/css"> -->
     <link rel="stylesheet" href="css/common.css" type="text/css">
+    <!-- social media logos are used from below library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/contact.js" defer></script>
 </head>
 
@@ -18,79 +19,69 @@
         <nav>
             <a href="index.html" class="navmenu">About</a>
             <a href="experience.html" class="navmenu">Experience</a>
-            <!-- <a href="education.html" class="navmenu">Education</a> -->
+            <a href="education.html" class="navmenu">Education</a>
             <a href="contact.html" class="navmenu active">Contact Form</a>
-            <a href="artwork.html" class="navmenu">ArtWork</a>  
+            <a href="artwork.html" class="navmenu">Art Work</a>
         </nav>
     </header>
 
     <main>
+
         <aside>
             <img src="media/Indira.jpeg" alt="Welcome" class="negative">
         </aside>
-        <section id="contactForm">
-            <h2>Contact Form</h2>
-            <form id="myForm"> 
-                <!-- method="post" -->
-                <!-- onsubmit="return validateForm(this);" -->
+        
+        <section class="contactForm">   
+            <h2>Contact me!</h2>         
+            <form id="myForm">                
                 <label for="firstName" class="text">First Name</label>
-                <input type="text" name="firstName" size="35" maxlength="30" id="firstName"
-                placeholder="(Required)"
-                onchange="nameValidate(firstName);">
-
+                <input type="text" name="firstName" size="35" maxlength="30" id="firstName" placeholder="(Required)"
+                    onchange="nameValidate(firstName);">
 
                 <label for="lastName" class="text">Last Name</label>
-                <input type="text" name="lastName" size="35" maxlength="30" id="lastName"
-                placeholder="(Required)"
-                onchange="nameValidate(lastName);">
+                <input type="text" name="lastName" size="35" maxlength="30" id="lastName" placeholder="(Required)"
+                    onchange="nameValidate(lastName);">
 
-                <label for="Email" class="text">Email Address</label>
-                <input type="text" name="email" size="35" maxlength="30" id="email" 
-                placeholder="(Required)"
-                onchange="emailValidate();">
+                <label for="email" class="text">Email Address</label>
+                <input type="text" name="email" size="35" maxlength="30" id="email" placeholder="(Required)"
+                    onchange="emailValidate();">
 
 
-                <label for="PhoneNo" class="text">Phone No(xxx)-xxx-xxxx</label>
-                <input type="text" name="phone" size="35" maxlength="20" id="phone"
-                onchange="phoneValidate();">
+                <label for="phone" class="text">Phone No(xxx)-xxx-xxxx</label>
+                <input type="text" name="phone" size="35" maxlength="20" id="phone" onchange="phoneValidate();">
 
 
-                <label for="textarea" class="textLabel" 
-                id="textarea_label">Leave a Message 
-                    <textarea name="textarea" 
-                    placeholder="Enter your message(Required)" id="textarea"               
-                    onchange="commentlengthvalidate();"></textarea>
+                <label for="textarea" class="textLabel" id="textarea_label">Leave a Message
+                    <textarea name="textarea" placeholder="Enter your message(Required)" id="textarea"
+                        onchange="commentlengthvalidate();"></textarea>
                 </label>
 
-                <!-- <p><span class="requiredSymbol">&#42;</span> indicates a required field.</p></span> -->
-                
                 <input type="button" id="submit_button" value="Submit" onclick="validateForm()">
                 <input type="button" value="Reset" id="reset_button" onclick="resetForm()">
             </form>
         </section>
-        <section id="success_message"> </section>
+        <p id="success_message"> </p>
         <section id="error_message">
             <ul id="error_list"></ul>
         </section>
-    </main>
-    <footer class="social-media">        
+    </main> 
+    <footer class="social-media">
         <ul id="bot">
-           <li id="bottom1"><a href="https://github.com/IndiraSomavarapu"
-                   target="_blank">
-                   <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-               </a>
-           </li>
-          <li id="bottom2">
-               <a href="https://www.facebook.com/indira.somavarapu" target="_blank">
-                   <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
-               </a>
-           </li>  
-           <li id="bottom3">
-               <a href="https://www.linkedin.com/in/indirasomavarapu/" target="_blank">
-                   <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-               </a>
-           </li>
-       </ul>     
+            <li id="bottom1"><a href="https://github.com/IndiraSomavarapu" target="_blank">
+                    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li id="bottom2">
+                <a href="https://www.facebook.com/indira.somavarapu" target="_blank">
+                    <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li id="bottom3">
+                <a href="https://www.linkedin.com/in/indirasomavarapu/" target="_blank">
+                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
     </footer>
 
 </body>

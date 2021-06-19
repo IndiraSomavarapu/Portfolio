@@ -9,27 +9,22 @@ window.addEventListener("DOMContentLoaded", getJson());
 
 // make http request to read json file from github account
 function getJson() {
-   // makeRequest("degrees.json");
-   // let childexist = document.getElementById('showJson').hasChildNodes();
-   // if (childexist==false){
-   //     makeRequest("https://indirasomavarapu.github.io/CollegeDegrees/degrees.json");
-   //  }  
-   makeRequest("https://indirasomavarapu.github.io/CollegeDegrees/degrees.json");
+   makeRequest("https://indirasomavarapu.github.io/Portfolio/degrees.json");
 }
 
 // read json data by calling the url
 function makeRequest(url) {
 
-   // let errorContainer = document.getElementById("error_message");
-   // let errors = document.getElementById("error_list");
+   let errorContainer = document.getElementById("error_message");
+   let errors = document.getElementById("error_list");
    httpRequest = new XMLHttpRequest();
 
-   // errorContainer.style.display = "none";
-   // errors.innerHTML = "<p>Please fix the following errors:</p>";
+   errorContainer.style.display = "none";
+   errors.innerHTML = "<p>Please fix the following AJAX errors:</p>";
 
    if (!httpRequest) {
-      // errors.innerHTML += "Unable to create an JsonHTTP instance";
-      // errorContainer.style.display = "block";
+      errors.innerHTML += "Unable to create an JsonHTTP instance";
+      errorContainer.style.display = "block";
       return false;
    }
    // This will run once the httpRequest's state has changed
@@ -43,9 +38,9 @@ function makeRequest(url) {
             populateTable(mydegrees);
          } else {
             //AJAX call unsuccessful
-            // errorContainer.style.display = "block";
-            // errors.innerHTML += "Error! Status is ";
-            // errors.innerHTML += httpRequest.status;
+            errorContainer.style.display = "block";
+            errors.innerHTML += "Error! Status is ";
+            errors.innerHTML += httpRequest.status;
             return false;
          }
       }

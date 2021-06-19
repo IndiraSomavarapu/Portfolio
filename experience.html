@@ -7,13 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience</title>
   <link rel="stylesheet" href="css/common.css" type="text/css">
-  <!-- <link rel="stylesheet" href="css/print.css" type="text/css" media="print"> -->
   <!-- social media logos are used from below library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="js/resume.js" defer></script>
-  <!-- needed for ajax -->
-  <!-- <link rel="stylesheet" href="css/style.css" type="text/css"> -->
-  <script src="js/script.js" defer></script>
+  <script src="js/experience.js" defer></script>
+  <!-- needed for ajax - read json from server -->
+  <script src="js/ajax.js" defer></script>
 </head>
 
 <body>
@@ -22,44 +20,47 @@
     <img src="media/initials.JPG" alt="Indira" class="init" />
     <nav>
       <a href="index.html" class="navmenu">About</a>
-      <a href="experience.html" class="navmenu active">Experience</a>
-      <!-- <a href="education.html" class="navmenu">Education</a> -->
+      <a href="experience.html" class="navmenu active">Experience</a>   
+      <a href="education.html" class="navmenu">Education</a>   
       <a href="contact.html" class="navmenu">Contact Form</a>
-      <a href="artwork.html" class="navmenu">ArtWork</a>  
+      <a href="artwork.html" class="navmenu">Art Work</a>  
     </nav>
   </header>
 
-  <main>
+  <main id="flex">
     
     <aside>
       <img src="media/Indira.jpeg" alt="Welcome" class="negative">
     </aside>
-    <section>
+    <section class="align">
       <h2>Resume</h2>
-      <!-- https://www.w3schools.com/howto/howto_js_accordion.asp -->
+      <!--Implement accordian is learned from below site
+           https://www.w3schools.com/howto/howto_js_accordion.asp -->
       <button id="expandContent1" class="accordion">Professional Summary</button>
-      <div class="x1">
+      <div class="accordianContent">  
         <ul class="a">
-          <li>Provide technical solutions</li>
+          <li>Analyze existing processes and provide technical solutions in SAP</li>
           <li>Design and development of SAP applications</li>
-          <li>Co-ordinating with off-shore development team</li>
-          <li>Support data needs for internal applications</li>
+          <li>Co-ordinating with in-house and off-shore development team</li>
+          <li>Support data needs for internal web applications</li>
+          <li>System monitoring and support</li>
+          <li>Troubleshoot production issues and provide workaround </li>
           <li>Follow Agile-methodology in SDLC</li>
         </ul>
       </div>
 
       <button id="expandContent2" class="accordion">Skill Set</button>
-      <div class="x2">
+      <div class="accordianContent">
         <ul class="a">
           <li>ERP Applications: <b>SAP</b></li>
           <li>Operating Systems: <b>Windows</b></li>
           <li>Databases: <b>SQLServer, Oracle,MS Access</b></li>
-          <li>Languages: <b>ABAP,Python,Java,HTML,CSS,JS</b></li>
-          <li>Technologies: <b>XI,Workflow</b></li>
+          <li>Languages: <b>ABAP,Python,Java,HTML,CSS,JS,Vue</b></li>
+          <li>Technologies: <b>PI,SAP Workflow</b></li>
         </ul>
       </div>
       <button id="expandContent3" class="accordion">Employment</button>
-      <div class="main">
+      <div class="accordianContent">
         <table class="exp-table">
           <caption id="cap1">Employment History in USA</caption>
           <thead>
@@ -94,9 +95,13 @@
         </table>
       </div>
       <button id="expandContent4" class="accordion">Education </button>      
-    <div class="showJson"> <p id="showJson" > </p></div>
+    <div class="accordianContent"> <p id="showJson" > </p></div>
     </section>
     
+    <section id="error_message">
+      <p id="error_list">
+      </p>
+  </section>
   </main>
   <footer class="social-media">
     <ul id="bot">

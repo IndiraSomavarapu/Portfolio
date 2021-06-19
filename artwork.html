@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <link rel="stylesheet" href="css/artwork.css" type="text/css">
-    <link rel="stylesheet" href="css/common.css" type="text/css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Sofia&family=Domine&display=swap" rel="stylesheet">
-    <!--Include Vue-->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script> 
-    <script src="js/art.js" defer></script>
-    <!-- <script src="js/script.js" defer></script> -->
-    <title>ArtWork</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArtWork</title>
+  <link rel="stylesheet" href="css/common.css" type="text/css">
+  <link rel="stylesheet" href="css/artwork.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- social media logos are used from below library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Sofia&family=Domine&display=swap"
+    rel="stylesheet">
+  <!--Include Vue-->
+  <script src="https://cdn.jsdelivr.net/npm/vue" defer></script>
+  <script src="js/art.js" defer></script> 
+
 </head>
+
 <body>
   <header>
-    <h1>Somavarapu's Portfolio </h1>
-    <img src="media/initials.JPG" alt="Indira" class="init" />
+    <div id="title">
+      <h1>{{title}} </h1>
+    </div>
+    <div id="titleImage" class="init">
+      <img :src="initialsImage" :alt="altText" />
+    </div>
+    <!-- <h1>Somavarapu's Portfolio </h1> 
+     <img src="media/initials.JPG" alt="Indira" class="init" /> -->
     <nav>
       <a href="index.html" class="navmenu">About</a>
       <a href="experience.html" class="navmenu">Experience</a>
-      <!-- <a href="education.html" class="navmenu">Education</a> -->
+      <a href="education.html" class="navmenu">Education</a>
       <a href="contact.html" class="navmenu">Contact Form</a>
-      <a href="artwork.html" class="navmenu active">ArtWork</a>  
+      <a href="artwork.html" class="navmenu active">Art Work</a>
     </nav>
   </header>
+
   <main>
     <aside>
       <img src="media/Indira.jpeg" alt="Welcome" class="negative">
     </aside>
     <h4>A collection of acrylic, pastel, water color and char coal paintings</h4>
-    <section id="carousel">    
+    <div id="carousel">
       <section class='carouselView'>
         <transition-group class='carousel' tag="section">
-          <section v-for="slide in slides" class='slide' :key="slide.id">
+          <div v-for="slide in slides" class='slide' :key="slide.id">
             <img :src="slide.imgSrc" :alt="slide.altText">
             <p class="bold">{{slide.caption}}</p>
-          </section>
+          </div>
         </transition-group>
-        <section class='carouselControls'>
+        <div class='carouselControls'>
           <button class='carouselButton' @click="previous">&#8592;</button>
           <button class='carouselButton' @click="next"> &#8594;</button>
-        </section>
+        </div>
       </section>
-    </section> 
+    </div>
   </main>
   <footer class="social-media">
     <ul id="bot">
@@ -63,7 +76,8 @@
         </a>
       </li>
     </ul>
-
   </footer>
+
 </body>
+
 </html>
