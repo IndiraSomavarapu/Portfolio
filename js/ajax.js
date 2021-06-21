@@ -4,7 +4,6 @@ JavaScript program to read Json data and show it as table
 
 //  trigger getJson function upon event
 window.addEventListener("DOMContentLoaded", getJson());
-// document.getElementById('expandContent4').addEventListener('click', getJson);
 
 
 // make http request to read json file from github account

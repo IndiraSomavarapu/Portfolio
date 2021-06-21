@@ -1,3 +1,5 @@
+/*  Form Validation functions */
+
 const nameRegex = /^[a-zA-Z]+$/; /* alpha characters only */
 
 /* Phone regex adapted from https://stackoverflow.com/questions/4338267/validate-phone-number-with-javascript */
@@ -31,8 +33,6 @@ function nameValidate(name) {
 // validate phone Number if entered
 function phoneValidate() {
 
-  // let phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-
   var field = document.getElementById("phone");
   if (field.value.length > minimum_value_length) {
     if (!phone.value.match(phoneRegex)) {
@@ -56,7 +56,6 @@ function emailValidate() {
 
   var field = document.getElementById("email");
   /* name@domain.com or my.name123@domain.edu */
-  // if (!/[\w.-]+@\w+\.[\w.]{2,}/i.test(field.value)) {
   if (!emailRegex.test(field.value)) {
     field.style.bordercolor = "#ba0000";
     field.style.backgroundColor = "#f5caca";
@@ -95,15 +94,6 @@ function validateForm() {
   let errors = document.getElementById("error_list");
   let success = document.getElementById("success_message");
 
-  // let nameRegex = /^[a-zA-Z]+$/; /* alpha characters only */
-
-  // /* Phone regex adapted from https://stackoverflow.com/questions/4338267/validate-phone-number-with-javascript */
-  // /* vaild formats: (123) 456-7890, (123)456-7890, (123)-456-7890, 123-456-7890, 123.456.7890, 1234567890, +31636363634, 075-63546725 */
-  // let phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-
-  // /* name@domain.com or my.name123@domain.edu */
-  // let emailRegex = /[\w.-]+@\w+\.[\w.]{2,}/i;
-
   /* resets form styles and empties error message if resubmitted */
   errorContainer.style.display = "none";
   errors.innerHTML = "<p>Error! Please fix the following issues:</p>";
@@ -131,6 +121,7 @@ function validateForm() {
     fname.style.borderColor = "#ba0000";
     returnValue = false;
   }
+
   /* form returns false if last name length is less than 2
    or non-alphabetical characters are used, prints styled error message to DOM  */
   if (lname.value.length < minimum_name_length || !lname.value.match(nameRegex)) {
@@ -192,6 +183,8 @@ function validateForm() {
     success.innerHTML = "<p>Success! The form was submitted.</p>";
   }
 }
+
+/* Helper function to clear the form content */
 function resetForm() {
   document.getElementById("myForm").reset();
   let smsg = document.getElementById("success_message");

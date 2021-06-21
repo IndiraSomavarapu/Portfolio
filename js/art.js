@@ -37,7 +37,7 @@ var carousel = new Vue({
           id: 6,
           imgSrc: "media/art/lakehouse.jpeg",
           altText: "Adventure in the boat",
-          caption: "Awaiting adventure in the boat"
+          caption: "Awaiting adventure in a boat"
         },
         {
           id: 7,
@@ -88,29 +88,16 @@ var carousel = new Vue({
 const mytitle = new Vue({
   el: '#title',
   data: {
-    title: "Somavarapu's Portfolio"
-  }
-})
-const myimage = new Vue({
-  el: '#titleImage',
-  data: {
+    title: "Somavarapu's Portfolio",
     initialsImage: "./media/initials.JPG",
     altText: "Indira"
   }
 })
-// Vue.component('top-menu', {
-//     props: {
-//         activeTab: {
-//             type: String,
-//             default: 'About'
-//         }
-//     },
-//     template:
-//         <nav>
-//             <a href="index.html" :class="{activeTab: activeTab === 'About'}">About</a>
-//             <a href="experience.html" :class="{activeTab: activeTab === 'Experience'}">Experience</a>
-//             <a href="contact.html" :class="{activeTab: activeTab === 'Contact'}">Contact Form</a>
-//             <a href="artwork.html" :class="{activeTab: activeTab === 'ArtWork'}">ArtWork</a>
-//         </nav>
-// });
-
+const myfooter = new Vue({
+  el: '#footermenu',
+  data: {
+      github: "https://github.com/IndiraSomavarapu",
+      facebook:"https://www.facebook.com/indira.somavarapu",
+      linkedin:"https://www.linkedin.com/in/indirasomavarapu/"
+  }
+})

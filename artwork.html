@@ -16,7 +16,7 @@
     rel="stylesheet">
   <!--Include Vue-->
   <script src="https://cdn.jsdelivr.net/npm/vue" defer></script>
-  <script src="js/art.js" defer></script> 
+  <script src="js/art.js" defer></script>
 
 </head>
 
@@ -24,12 +24,9 @@
   <header>
     <div id="title">
       <h1>{{title}} </h1>
+      <img :src="initialsImage" :alt="altText" class="init" />
     </div>
-    <div id="titleImage" class="init">
-      <img :src="initialsImage" :alt="altText" />
-    </div>
-    <!-- <h1>Somavarapu's Portfolio </h1> 
-     <img src="media/initials.JPG" alt="Indira" class="init" /> -->
+
     <nav>
       <a href="index.html" class="navmenu">About</a>
       <a href="experience.html" class="navmenu">Experience</a>
@@ -59,25 +56,20 @@
       </section>
     </div>
   </main>
-  <footer class="social-media">
-    <ul id="bot">
-      <li id="bottom1"><a href="https://github.com/IndiraSomavarapu" target="_blank">
-          <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li id="bottom2">
-        <a href="https://www.facebook.com/indira.somavarapu" target="_blank">
-          <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li id="bottom3">
-        <a href="https://www.linkedin.com/in/indirasomavarapu/" target="_blank">
-          <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-        </a>
-      </li>
-    </ul>
+  <footer>
+    <div id="footermenu">     
+      <a :href="github" target="_blank" class="bottom">
+        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+      </a>
+      <a :href="facebook" target="_blank" class="bottom" >
+        <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+      </a>
+      <a :href="linkedin" target="_blank" class="bottom">
+        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+      </a>    
+    </div>
   </footer>
-
+  
 </body>
 
 </html>

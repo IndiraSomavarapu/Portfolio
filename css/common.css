@@ -1,11 +1,10 @@
 /* Header elements used for all pages */
 
 body {
-    /* display: grid; */
+    
     color: black;
     font-size: 14pt;
     font-family: Vardana, serif;
-
     margin: 0;
     padding: 0;
     width: 100%;
@@ -42,10 +41,10 @@ nav {
     padding: 0;
     font-family: Georgia, serif;
 }
-.navmenu,.navMenu,.activeTab  {
-    /* display: inline; */
-    font-size: 1.1em;
-    /* display: inline-block; */
+
+.navmenu, .navMenu, .activeTab {
+    
+    font-size: 1.1em;    
     text-decoration: none;
     color: #000000;
     padding: 15px 20px;
@@ -53,7 +52,7 @@ nav {
     display: flex;
 }
 
-.navmenu:hover,.navmenu:focus {
+.navmenu:hover, .navmenu:focus {
     color: #FFFFFF;
 }
 
@@ -66,8 +65,7 @@ ul.a {
     list-style-type: square;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    /* background-color: #f6f2f6;     */
+    overflow: hidden;    
 }
 
 li {
@@ -89,20 +87,11 @@ li {
     list-style: none;
     font-size: 10pt;
     transition: .5s;
-    margin: 1px 1px;
-    padding: 2px 2px;
+    margin: 2px 1px;
+    padding: 2px 10px;
     color: white;
 }
 
-/* .social-media{
- position:fixed;
- 
- left: 50%;
- bottom: 0;
- height: 5em;
- transform: translate(-53%,50%); 
- text-align: center;
-}  */
 
 footer {
     text-align: center;
@@ -114,14 +103,12 @@ footer {
 }
 
 /* article header */
-
 h5 {
     margin-top: 0%;
     margin-bottom: 1em;
 }
 
-li a:hover {
-    /* .active */
+li a:hover {    
     background-color: rgb(228, 222, 222);
     color: black;
 }
@@ -134,12 +121,9 @@ li a:hover {
     padding: 5px;
     width: 1px;
     height: 1px;
-    /* display: flex; */
+    
 }
 
-/* img:hover {
-    box-shadow: 0 0 2px 2px rgba(241, 111, 231, 0.5);
-} */
 
 /* Initials Image in header */
 
@@ -147,8 +131,8 @@ li a:hover {
     margin-left: 48%;
     padding: 5px;
     margin-bottom: 1em;
-    width:fit-content;
-    /* display: flex; */
+    width: fit-content;
+    
 }
 
 .init:hover {
@@ -156,26 +140,22 @@ li a:hover {
 }
 
 /* class used for my biography page */
-#flex{
+
+#flex {
     display: flex;
 }
 
-/* article {
-    float: center;
-    width: 800px;
-    margin-left: 4em;
-}  */
 
 article.about {
-    max-width: 800px; 
+    max-width: 800px;
     margin-top: 2em;
     margin-left: 7em;
-    padding: 1em;    
+    padding: 1em;
     border-radius: 15px;
-    font-size: 20pt;      
-    border:3px solid rgba(241, 111, 231, 0.5);    
+    font-size: 20pt;
+    border: 3px solid rgba(241, 111, 231, 0.5);
     height: fit-content;
-    float: left ;
+    float: left;
 }
 
 .bluebold {
@@ -183,15 +163,14 @@ article.about {
     font-weight: bold;
 }
 
-.bold {    
+.bold {
     font-weight: bold;
 }
 
 /* this section modifies the aside elements */
 
 aside {
-    float: left;
-    /* width: 300px; */
+    float: left;    
     width: 350px;
     height: 1210px;
     border-right: 1px solid #e0dee0;
@@ -200,21 +179,19 @@ aside {
 }
 
 aside img {
-    /* display: block; */
+    
     margin-top: 4em;
     margin-left: auto;
     margin-right: auto;
     border: 3px solid rgba(243, 81, 229, 0.5);
     border-radius: 12px;
     width: 250px;
-    height: 271px;    
+    height: 271px;
     display: flex;
 }
 
 .negative {
-    
-    transition: all 2s ease-in-out .5s;
-    /* -webkit-transition: all 2s ease-in-out .5s; */
+    transition: all 2s ease-in-out .5s;    
     opacity: 1;
 }
 
@@ -231,61 +208,65 @@ aside img {
     border: none;
     outline: none;
     transition: 0.4s;
-    font-size: 18px;
-    /* min-height: fit-content; */
-    
+    font-size: 18px;    
 }
+
 /* Add a background color to the button if it is clicked on 
 (add the .active class with JS), 
 and when you move the mouse over it (hover) */
-.accordion:hover {
-    /* .active, */
+
+.accordion:hover {    
     background-color: rgb(228, 222, 222);
 }
 
 /* Style the accordion panel. Note: hidden by default */
-/* .x1, .x2, .x3,.showJson { */
-.accordianContent {  
+
+.accordianContent {
     padding: 0 18px;
     background-color: white;
     /* hide the content */
     /* overflow: hidden;
     max-height: 0;
     transition: max-height 0.2s ease-out; */
+
     /* resizing the window adjusts the content height dynamically */
-    display:none;
+    display: none;
     overflow: auto;
 }
 
-.accordion.active + .accordianContent { display:block}
+.accordion.active+.accordianContent {
+    display: block
+}
 
-.accordion::after{
+.accordion::after {
     content: '\25be';
     float: right;
     transform: scale(1.5);
 }
-.accordion.active{
+
+.accordion.active {
     background: rgb(228, 226, 226);
 }
-.accordion.active::after { 
+
+.accordion.active::after {
     content: '\25b4';
 }
 
 /* section element used in experience/education pages */
 
-.align{
-    /* float: left; */
+.align {
+    
     width: 800px;
-    margin-left: 12em;    
-    margin-top:2em;
-   
+    margin-left: 12em;
+    margin-top: 2em;
 }
 
 /* formatting of experience table */
+
 .exp-table {
     border-collapse: collapse;
     margin: 25px 0;
-    font-size: 0.9em;
+    font-size: 14pt;
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
@@ -321,36 +302,42 @@ and when you move the mouse over it (hover) */
 }
 
 /* Education page grid alignment */
-.initEd {    
+
+.initEd {
     padding: 5px;
     margin-bottom: 1em;
-    margin-left: 3em;   
+    margin-left: 3em;
 }
-.initEd1 {    
+
+.initEd1 {
     padding: 5px;
     margin-bottom: 1em;
-    margin-left: 3.5em;   
+    margin-left: 3.5em;
 }
-.initEd:hover,.initEd1:hover {
+
+.initEd:hover, .initEd1:hover {
     box-shadow: 0 0 2px 2px rgba(241, 111, 231, 0.5);
 }
-.alignEdu{
-    width: 800px;    
-    margin-left: 10em;    
-    margin-top:3em;  
-    float: left;      
-    border: 2px solid #f1edf0;  
+
+.alignEdu {
+    width: 800px;
+    margin-left: 10em;
+    margin-top: 3em;
+    float: left;    
+    border:3px solid rgba(241, 111, 231, 0.5); 
 }
- .burec {
+
+.burec {
     display: grid;
     grid-gap: 2em;
     font-family: sans-serif;
+    font-size: 14pt;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(50px, auto);
     color: black;
     margin: 5px;
     padding: 10px;
-    float:left;
+    float: left;
 }
 
 .e1 {
@@ -367,50 +354,54 @@ and when you move the mouse over it (hover) */
 
 .e4 {
     grid-column: 2 / 5;
-} 
+}
 
 /*-----------------Contact.html-----------------*/
+
 /* form */
+
 #myForm {
-    display: grid;    
+    display: grid;
     grid-template-columns: 350px 350px;
     grid-gap: 20px 0px;
     justify-items: left;
     margin-left: 4.5em;
     margin-right: auto;
-    margin-top:1em;
-    width: 800px;  
+    margin-top: 1em;
+    width: 800px;
     padding: 1px 0;
-}
-.contactForm {
-    width: 800px;    
-    margin-left: 10em;    
-    margin-top:3em;  
-    float: left;  
-    
-    border: 2px solid #f1edf0;    
-    /* background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 0 20px 0 #d3d3d3;  */
    
-    
+}
+
+.contactForm {
+    font-size: 14pt;
+    font-family: sans-serif;
+    width: 800px;
+    margin-left: 10em;
+    margin-top: 3em;
+    float: left;
+    border: 3px solid rgba(241, 111, 231, 0.5);    
 }
 
 .textbox, #textarea {
-    /* padding: 1px; */
-   margin: 25px 0;
-   border: 1px solid #f0eff1;
-   border-radius: 5px;
-   display: block; 
+    font-size: 14pt;
+    font-family: sans-serif;
+    margin: 25px 0;
+    border: 1px solid #f0eff1;
+    border-radius: 5px;
+    display: block;
 }
 
 .textbox {
+    font-size: 14pt;
+    font-family: sans-serif;
     width: 270px;
     margin-left: auto;
 }
 
 #textarea {
-    /* font-family:  Georgia, serif; */
+    font-size: 14pt;
+    font-family: sans-serif;
     margin-bottom: 1px;
     height: 50px;
     width: 630px;
@@ -455,7 +446,7 @@ and when you move the mouse over it (hover) */
     color: black;
 }
 
-#success_message{
+#success_message {
     color: green;
     font-weight: bold;
     float: left;
@@ -487,7 +478,6 @@ and when you move the mouse over it (hover) */
     margin-top: 60px;
     float: left;
 }
-
 #error_list {
     text-align: center;
 }
@@ -505,10 +495,10 @@ and when you move the mouse over it (hover) */
 
 /* Experience - for json table */
 
-.edTable  {
+.edTable {
     border-collapse: collapse;
     margin: 25px 0;
-    font-size: 0.9em;
+    font-size: 14pt;
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
